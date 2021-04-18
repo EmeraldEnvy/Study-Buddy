@@ -3,12 +3,13 @@ import discord
 import os
 from dotenv import load_dotenv
 from discord.ext import commands
+import firebase_connect as fb
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = commands.Bot(command_prefix='&')
-
+firebase = fb.FirebaseConnection()
 
 @client.event
 async def on_ready():
